@@ -1,8 +1,0 @@
-asgiref
-Django
-gunicorn
-pytz
-sqlparse
-whitenoise
-dj-database-url
-django-crispy-forms
