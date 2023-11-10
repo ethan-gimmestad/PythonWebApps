@@ -1,0 +1,25 @@
+{% extends 'theme.html' %}
+
+
+
+{% block content %}
+
+<ul>
+
+
+{% for h in heros %}
+<li>
+<a href="{{ h.pk }}">
+{{ h.name }}
+</a>
+</li>
+{% endfor %}
+</ul>
+
+<!-- <a href="/photo/{{ photo }}">
+    <img class="photo" src="/{{ photo }}" alt="Chapter {{ photo }}" width="200">
+</a> -->
+
+
+
+{% endblock content %}
