@@ -1,0 +1,9 @@
+{% extends 'superheroes/base.html' %}
+
+{% block content %}
+    <h1>{{ object.name }}</h1>
+    <p>{{ object.description }}</p>
+    <!-- Add more details about the superhero as needed -->
+    <a href="{% url 'superhero_update' object.id %}">Edit</a>
+    <a href="{% url 'superhero_delete' object.id %}">Delete</a>
+{% endblock %}

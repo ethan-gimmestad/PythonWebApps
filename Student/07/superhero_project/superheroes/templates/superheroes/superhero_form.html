@@ -1,0 +1,11 @@
+{% extends 'superheroes/base.html' %}
+
+{% block content %}
+    <h1>{% if form.instance.id %}Edit{% else %}Add{% endif %} Superhero</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'superhero_list' %}">Cancel</a>
+{% endblock %}
