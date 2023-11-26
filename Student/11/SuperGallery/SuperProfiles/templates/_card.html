@@ -1,0 +1,16 @@
+<div class="col-lg-6 my-3">
+    <div class="card">
+        <div class="card-header bg-dark text-light">
+            <h2>{{ card.title }}</h2>
+        </div>
+        <div class="card-body text-dark p-5">
+            {% autoescape off %}
+            <p>{{ card.body }}</p>
+            {% endautoescape %}
+
+        </div>
+        {% if card.link != None %}
+        <a href="{{ card.link }}" class="btn btn-primary">Read Article</a>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: 100%; margin: 20px">
+        <div class="row align-items-start">
+            <div class="col">
+                <h1>{{ card.title }}</h1>
+                <p>{{ card.realName }}</p>
+            </div>
+            <div class="col">
+                <h2>Strengths</h2>
+                <ul>
+                    <li>{{ card.strength1 }}</li>
+                    <li>{{ card.strength2 }}</li>
+                    <li>{{ card.strength3 }}</li>
+                </ul>
+                <h2>Weaknesses</h2>
+                <ul>
+                    <li>{{ card.weakness1 }}</li>
+                    <li>{{ card.weakness2 }}</li>
+                    <li>{{ card.weakness3 }}</li>
+                </ul>
+            </div>
+        <div class="col">
+            <img src="{{ card.imagePath }}" alt="{{ card.title }}" width="300">
+        </div>
+        </div>
+    </div>
+</div>

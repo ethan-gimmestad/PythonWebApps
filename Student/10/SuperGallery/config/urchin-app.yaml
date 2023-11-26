@@ -1,0 +1,80 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+databases:
+- engine: PG
+  name: superherodb
+  version: "12"
+features:
+- buildpack-stack=ubuntu-22
+ingress:
+  rules:
+  - component:
+      name: superhero
+    match:
+      path:
+        prefix: /
+  - component:
+      name: superhero-static
+    match:
+      path:
+        prefix: /static
+name: urchin-app
+region: nyc
+services:
+- environment_slug: python
+  envs:
+  - key: DISABLE_COLLECTSTATIC
+    scope: RUN_AND_BUILD_TIME
+    value: "1"
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${superherodb.DATABASE_URL}
+  - key: POSTGRES_DB
+    scope: RUN_AND_BUILD_TIME
+    value: ${superherodb.DATABASE}
+  - key: POSTGRES_HOST
+    scope: RUN_AND_BUILD_TIME
+    value: ${superherodb.HOSTNAME}
+  - key: POSTGRES_USER
+    scope: RUN_AND_BUILD_TIME
+    value: ${superherodb.USERNAME}
+  - key: POSTGRES_PASSWORD
+    scope: RUN_AND_BUILD_TIME
+    value: ${superherodb.PASSWORD}
+  - key: POSTGRES_PORT
+    scope: RUN_AND_BUILD_TIME
+    value: ${superherodb.PORT}
+  - key: DJANGO_SUPERUSER_EMAIL
+    scope: RUN_AND_BUILD_TIME
+    value: luna0500@bears.unco.edu
+  - key: DJANGO_SUPERUSER_USERNAME
+    scope: RUN_AND_BUILD_TIME
+    value: luna0500
+  - key: DJANGO_SUPERUSER_PASSWORD
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+    value: EV[1:UEC0OIeI568uFW1P55/VNjFKpksRplHx:/QoHEis4kIIBlZY1UwY+ckocBS5bFo7QnonCdpKjWA==]
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: Luna0500/PythonWebApps
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: superhero
+  run_command: |-
+    python manage.py migrate --no-input
+
+    python manage.py createsuperuser --no-input
+
+    gunicorn --worker-tmp-dir /dev/shm config.wsgi
+  source_dir: Student/10/SuperGallery
+static_sites:
+- environment_slug: html
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: Luna0500/PythonWebApps
+  name: superhero-static
+  source_dir: Student/10/SuperGallery/static

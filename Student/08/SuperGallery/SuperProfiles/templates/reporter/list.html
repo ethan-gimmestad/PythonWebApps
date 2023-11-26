@@ -1,0 +1,34 @@
+{% extends 'theme.html' %}
+
+
+
+{% block content %}
+
+<div class="container-fluid m-5">
+
+    <h1 class="text-primary text-center">List of Reporters</h1>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Reporter</th>
+            <th>Name</th>
+            <th>Biography</th>
+            <th>Edit</th>
+        </tr>
+
+        {% for reporter in object_list %}
+        <tr>
+            <td><a href="/reporter/{{ reporter.pk }}">{{ reporter.user.username }}</a></td>
+            <td>{{ reporter.realName }}</td>
+            <td>{{ reporter.bio }}</td>
+            <td>
+                <a href="/reporter/{{ reporter.pk }}/">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock content %}

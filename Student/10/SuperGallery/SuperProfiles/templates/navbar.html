@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark text-light">
+
+    <div class="container">
+
+        <a class="navbar-brand text-light" href="/">Superhero News</a>
+
+        <ul class="navbar-nav text-light ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'reporter_list' %}">Reporters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'hero_list' %}">Heroes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'article_list' %}">News</a>
+            </li>
+
+            {% if user.is_authenticated %}
+
+            <li class="nav-item">
+                <a class="nav-link  text-light " href="/reporter/{{user.pk}}">Hello {{ user.username }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  text-light " href="{% url 'logout' %}">Log out</a>
+            </li>
+
+            {% else %}
+
+            <li class="nav-item">
+                <a class="nav-link  text-light " href="{% url 'login' %}">Log In</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link  text-light " href="{% url 'reporter_add' %}">Sign Up</a>
+            </li>
+
+            {% endif %}
+
+        </ul>
+
+    </div>
+
+</nav>

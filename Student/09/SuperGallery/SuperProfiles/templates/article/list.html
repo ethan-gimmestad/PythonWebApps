@@ -1,0 +1,22 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center">
+
+{% for article in object_list %}
+
+<div class="card" style="width: 18rem; margin: 20px">
+    <img class="card-img-top" src="{{ article.imagePath }}" alt="{{ article.title }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ article.title }}</h5>
+      <p class="card-text">{{ article.tagline }}</p>
+      <a href="/article/{{ article.pk }}" class="btn btn-primary">Read Article</a>
+    </div>
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock content %}

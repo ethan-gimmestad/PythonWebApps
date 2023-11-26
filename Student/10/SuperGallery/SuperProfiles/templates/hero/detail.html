@@ -1,0 +1,36 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: 60%; margin: 20px">
+        <div class="row align-items-start">
+            <div class="col">
+                <h1>{{ hero.title }}</h1>
+                <p>{{ hero.realName }}</p>
+            </div>
+            <div class="col">
+                <h2>Strengths</h2>
+                <ul>
+                    <li>{{ hero.strength1 }}</li>
+                    <li>{{ hero.strength2 }}</li>
+                    <li>{{ hero.strength3 }}</li>
+                </ul>
+                <h2>Weaknesses</h2>
+                <ul>
+                    <li>{{ hero.weakness1 }}</li>
+                    <li>{{ hero.weakness2 }}</li>
+                    <li>{{ hero.weakness3 }}</li>
+                </ul>
+            </div>
+        <div class="col">
+            <img src="{{ hero.imagePath }}" alt="{{ hero.title }}" width="300">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<a href="{{ hero.pk }}/tabs">Tabs View</a>
+
+{% endblock content %}

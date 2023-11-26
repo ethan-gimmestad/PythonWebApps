@@ -1,0 +1,17 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center">
+
+{% for hero in object_list %}
+
+<a href="/hero/{{ hero.pk }}">
+    <img class="photo" src="{{ hero.imagePath }}" alt="{{ hero.title }}" width="300">
+</a>
+
+{% endfor %}
+
+</div>
+
+{% endblock content %}

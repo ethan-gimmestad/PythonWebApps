@@ -1,0 +1,39 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center">
+
+    <div class="card m-5 p-5">
+
+        <h2 class="text-primary">List of Photos</h2>
+
+        <table class="table table-hover">
+            <tr>
+                <th>Photo</th>
+                <th>Reporter</th>
+                <th>Edit</th>
+            </tr>
+
+            {% for photo in object_list %}
+            <tr>
+                <td><a href="/photo/{{ photo.pk }}">{{ photo.title }}</a></td>
+                <td><a href="/reporter/{{ photo.reporter.pk }}">{{ photo.reporter.user.username }}</a></td>
+                <td>
+                    <a href="/photo/{{ photo.pk }}/">Edit</a> /
+                    <a href="/photo/{{ photo.pk }}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <p>
+            <a href="/photo/add" class="btn btn-success m-5">Add New Photo</a>
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock content %}

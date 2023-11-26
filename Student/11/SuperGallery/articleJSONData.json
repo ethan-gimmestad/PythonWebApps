@@ -1,0 +1,35 @@
+[
+{
+  "model": "SuperProfiles.article",
+  "pk": 1,
+  "fields": {
+    "reporter": 1,
+    "hero": 1,
+    "title": "Spider-Man: A Web-Slinging Enigma in the Streets of New York",
+    "tagline": "Unmasking the Spectacular Spider-Man: A Journalist's Quest for the Truth",
+    "body": "In the bustling streets of New York City, a masked vigilante swings from skyscraper to skyscraper, fighting crime and protecting the innocent. This enigmatic hero, known as Spider-Man, has captivated the hearts of New Yorkers and people around the world. As a seasoned journalist, I, Lois Lane, took it upon myself to delve into the mystery that surrounds this web-slinging savior."
+  }
+},
+{
+  "model": "SuperProfiles.article",
+  "pk": 2,
+  "fields": {
+    "reporter": 1,
+    "hero": 3,
+    "title": "Cyborg: The Man-Machine Redefining Heroism",
+    "tagline": "Exploring the Unstoppable Force of Justice - Cyborg, Half Man, Half Machine",
+    "body": "In a world of ever-evolving technology and relentless threats, there emerges a hero like no other. Victor Stone, known as Cyborg, is a true amalgamation of human ingenuity and superhuman prowess. As a journalist with a passion for uncovering extraordinary stories, I, Lois Lane, couldn't resist the urge to dive deep into the awe-inspiring tale of Cyborg."
+  }
+},
+{
+  "model": "SuperProfiles.article",
+  "pk": 3,
+  "fields": {
+    "reporter": 1,
+    "hero": 5,
+    "title": "Zatanna: The Sorceress of Enchantment and Mysticism",
+    "tagline": "The Enigmatic Zatanna - Unraveling the Secrets of Magic and Heroism",
+    "body": "In the realm of the supernatural and the mystical, a figure shrouded in mystery and enchantment stands as a beacon of hope and a guardian of the mystical arts. Zatanna Zatara, simply known as Zatanna, is a master of magic, a formidable hero, and a symbol of the mystic in a world dominated by science and reason. As an intrepid journalist with a passion for unraveling the extraordinary, I, Lois Lane, couldn't resist the allure of exploring the enigmatic world of Zatanna."
+  }
+}
+]

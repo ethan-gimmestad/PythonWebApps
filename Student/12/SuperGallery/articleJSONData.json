@@ -1,0 +1,14 @@
+[
+{
+  "model": "SuperProfiles.article",
+  "pk": 1,
+  "fields": {
+    "reporter": 1,
+    "hero": 1,
+    "title": "a",
+    "tagline": "a",
+    "body": "a",
+    "photo": 1
+  }
+}
+]

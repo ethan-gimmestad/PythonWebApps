@@ -1,0 +1,106 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="container m-5">
+
+    <h1 class="text-primary">Reporter Details</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg">
+
+                <table class="table">
+                    <tr>
+                        <td><b>Reporter Username:</b></td>
+                        <td>
+                            {{ object.user.username }}</a>
+                    </tr>
+                    <tr>
+                        <td><b>Reporter Name:</b></td>
+                        <td>
+                            {{ object.realName }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Reporter Email:</b></td>
+                        <td>
+                            {{ object.email }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Biography:</b> </td>
+                        <td>{{ object.bio }}</td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+    <a href="/reporter/{{ object.pk }}/" class="btn btn-success m-5">Edit Profile</a>
+
+    <div class="card m-5 p-5">
+
+        <h2 class="text-primary">List of Heroes</h2>
+
+        <table class="table table-hover">
+            <tr>
+                <th>Hero</th>
+                <th>Reporter</th>
+                <th>Edit</th>
+            </tr>
+
+            {% for hero in heroes %}
+            <tr>
+                <td><a href="/hero/{{ hero.pk }}">{{ hero.title }}</a></td>
+                <td><a href="/reporter/{{ hero.reporter.pk }}">{{ hero.reporter.user.username }}</a></td>
+                <td>
+                    <a href="/hero/{{ hero.pk }}/">Edit</a> /
+                    <a href="/hero/{{ hero.pk }}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <p>
+            <a href="/hero/add" class="btn btn-success m-5">Add New Hero</a>
+        </p>
+
+    </div>
+
+    <div class="card m-5 p-5">
+
+        <h2 class="text-primary">List of Articles</h2>
+
+        <table class="table table-hover">
+            <tr>
+                <th>Article</th>
+                <th>Reporter</th>
+                <th>Edit</th>
+            </tr>
+
+            {% for article in articles %}
+            <tr>
+                <td><a href="/article/{{ article.pk }}">{{ article.title }}</a></td>
+                <td><a href="/reporter/{{ article.reporter.pk }}">{{ article.reporter.user.username }}</a></td>
+                <td>
+                    <a href="/article/{{ article.pk }}/">Edit</a> /
+                    <a href="/article/{{ article.pk }}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <p>
+            <a href="/article/add" class="btn btn-success m-5">Add New Article</a>
+        </p>
+
+    </div>
+</div>
+
+{% endblock content %}

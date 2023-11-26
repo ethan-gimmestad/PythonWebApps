@@ -1,0 +1,82 @@
+[
+{
+  "model": "SuperProfiles.hero",
+  "pk": 1,
+  "fields": {
+    "reporter": 1,
+    "title": "Spiderman",
+    "realName": "Peter Parker",
+    "strength1": "Web Powers",
+    "strength2": "Spidey Senses",
+    "strength3": "Strength",
+    "weakness1": "His Naivete",
+    "weakness2": "Too Much Self Confidence",
+    "weakness3": "Ethyl Chloride Pesticide",
+    "imagePath": "/static/images/0spiderman.webp"
+  }
+},
+{
+  "model": "SuperProfiles.hero",
+  "pk": 2,
+  "fields": {
+    "reporter": 1,
+    "title": "Thing",
+    "realName": "Ben Grimm",
+    "strength1": "Great Teamwork",
+    "strength2": "Strength",
+    "strength3": "Durability",
+    "weakness1": "Emotional Vulnerability",
+    "weakness2": "Stubborn",
+    "weakness3": "Too Large To Interact With Small Objects",
+    "imagePath": "/static/images/1thing.jpg"
+  }
+},
+{
+  "model": "SuperProfiles.hero",
+  "pk": 3,
+  "fields": {
+    "reporter": 1,
+    "title": "Cyborg",
+    "realName": "Victor Stone",
+    "strength1": "Technopath",
+    "strength2": "Strength",
+    "strength3": "Intellect",
+    "weakness1": "Maintaining His Humanity",
+    "weakness2": "Vulnerable To Magic",
+    "weakness3": "Vulnerable To Mind Control",
+    "imagePath": "/static/images/2cyborg.webp"
+  }
+},
+{
+  "model": "SuperProfiles.hero",
+  "pk": 4,
+  "fields": {
+    "reporter": 1,
+    "title": "Superman",
+    "realName": "Clark Kent",
+    "strength1": "Laser Vision",
+    "strength2": "Strength",
+    "strength3": "Flight",
+    "weakness1": "Kryptonite",
+    "weakness2": "Vulnerable To Magic",
+    "weakness3": "Red Suns",
+    "imagePath": "/static/images/3superman.webp"
+  }
+},
+{
+  "model": "SuperProfiles.hero",
+  "pk": 5,
+  "fields": {
+    "reporter": 1,
+    "title": "Zatanna",
+    "realName": "Zatanna Zatara",
+    "strength1": "Magic Powers",
+    "strength2": "Creativity",
+    "strength3": "Strong Will",
+    "weakness1": "Can't Use Magic Without Speech",
+    "weakness2": "Vulnerable To Magic",
+    "weakness3": "Was Scared Of Puppets",
+    "imagePath": "/static/images/4zatanna.jpg"
+  }
+}
+]

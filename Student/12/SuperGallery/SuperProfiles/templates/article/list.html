@@ -1,0 +1,42 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center">
+
+{% for article in object_list %}
+
+<div class="card" style="width: 18rem; margin: 20px">
+    <img class="card-img-top" src="/media/{{ article.photo.image }}" alt="{{ article.title }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ article.title }}</h5>
+      <p class="card-text">{{ article.tagline }}</p>
+      <a href="/article/{{ article.pk }}" class="btn btn-primary">Read Article</a>
+    </div>
+</div>
+
+{% endfor %}
+
+</div>
+
+<form method="post" action="{% url 'article_dumpjson' %}">
+  {% csrf_token %}
+  <button type="submit">Export JSON Data</button>
+</form>
+
+<form method="post" action="{% url 'article_loadjson' %}">
+  {% csrf_token %}
+  <button type="submit">Load JSON Data</button>
+</form>
+
+<form method="post" action="{% url 'article_dumpcsv' %}">
+  {% csrf_token %}
+  <button type="submit">Export CSV Data</button>
+</form>
+
+<form method="post" action="{% url 'article_loadcsv' %}">
+  {% csrf_token %}
+  <button type="submit">Load CSV Data</button>
+</form>
+
+{% endblock content %}
